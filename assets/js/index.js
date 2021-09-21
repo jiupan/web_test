@@ -9,6 +9,10 @@ $(function() {
         });
     })
 
+    getUserInfo()
+})
+
+function getUserInfo() {
     $.ajax({
         method: 'GET',
         url: '/my/userinfo',
@@ -19,8 +23,7 @@ $(function() {
             renderAvatar(res.data);
         }
     })
-})
-
+}
 // 渲染用户头像函数
 function renderAvatar(user) {
     var name = user.nickname || user.username;
